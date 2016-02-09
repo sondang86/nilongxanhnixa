@@ -1,0 +1,47 @@
+/*
+ Theme Name:   Zerif Child
+ Theme URI:    http://example.com/twenty-fifteen-child/
+ Description:  Zerif Child Theme
+ Author:       Son Dang
+ Author URI:   http://example.com
+ Template:     zerif-lite
+ Version:      1.0.0
+ License:      GNU General Public License v2 or later
+ License URI:  http://www.gnu.org/licenses/gpl-2.0.html
+ Tags:         light, dark, two-columns, right-sidebar, responsive-layout, accessibility-ready
+ Text Domain:  zerif-child
+*/
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td {
+    border: 0;
+    font-family: Arial;
+    font-size: 16px;
+    font-style: inherit;
+    font-weight: inherit;
+    margin: 0;
+    outline: 0;
+    padding: 0;
+    vertical-align: baseline;
+}
+h1, h2 {
+    font-family: 'sans-serif';
+    font-weight: 700;
+    line-height: 35px;
+}
+
+.team-member .position {
+    font-size: 13px;
+    margin-top: 13px;
+}
+#footer {
+    background: #631758;
+    line-height: 20px;
+}
+
+.about-us {
+    background: #631758;
+}
+
+.responsive-logo a {
+    height: 70px;
+}
