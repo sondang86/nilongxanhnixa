@@ -10,5 +10,15 @@
         );
     }
     add_action( 'wp_enqueue_scripts', 'theme_enqueue_styles' );
+    
+    /*Add Google captcha field to Comment form*/
+    add_filter('comment_form','add_google_captcha');
+
+    function add_google_captcha() {
+        echo '<div class="g-recaptcha" data-sitekey="6Le50RcTAAAAAFqKdnbDt0qDWYcA5lCQKJ4M5_BN"></div>';
+ 
+    }
+
+    /*End of Google captcha*/
 
 ?>

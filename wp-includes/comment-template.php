@@ -2150,7 +2150,7 @@ function comment_form( $args = array(), $post_id = null ) {
 		            '<input id="email" name="email" ' . ( $html5 ? 'type="email"' : 'type="text"' ) . ' value="' . esc_attr(  $commenter['comment_author_email'] ) . '" size="30" aria-describedby="email-notes"' . $aria_req . $html_req  . ' /></p>',
 		'url'    => '<p class="comment-form-url"><label for="url">' . __( 'Website' ) . '</label> ' .
 		            '<input id="url" name="url" ' . ( $html5 ? 'type="url"' : 'type="text"' ) . ' value="' . esc_attr( $commenter['comment_author_url'] ) . '" size="30" /></p>',
-                'verify reCAPTCHA' => '<div class="g-recaptcha" data-sitekey="6Le50RcTAAAAAFqKdnbDt0qDWYcA5lCQKJ4M5_BN"></div>'
+//                'verify reCAPTCHA' => '<div class="g-recaptcha" data-sitekey="6Le50RcTAAAAAFqKdnbDt0qDWYcA5lCQKJ4M5_BN"></div>'
 	);
 
 	$required_text = sprintf( ' ' . __('Required fields are marked %s'), '<span class="required">*</span>' );
