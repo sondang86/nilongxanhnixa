@@ -34,36 +34,15 @@ get_header(); ?>
     </div><!-- .container -->
     <script type="text/javascript">
         jQuery("#submit").click(function(e){
-            var data_2;
-            jQuery.ajax({
-                type: "POST",
-                url: "http://localhost/wp-content/themes/zerif-child/google_captcha.php",
-                data: jQuery('#commentform').serialize(),
-                async:false,
-                success: function(data) {
-                    if(data.nocaptcha==="true"){
-                        data_2=1;
-                    }else if(data.spam==="true")
-                    {
-                        data_2=1;
-                    }
-                    else
-                    {
-                        data_2=0;
-                    }
-                }
-            });
-            if(data_2!=0){
-                e.preventDefault();
-                if(data_2==1){
-                    alert("Please check the captcha");
-                }else{
-                    alert("Please Don't spam");
-                }
-            }else
-            {
-                jQuery("#commentform").submit
-            }
+        var v = grecaptcha.getResponse();
+        if(v.length == 0)
+        {
+            alert('captcha not complete');
+        }
+        else
+        {
+            alert('captcha completed');
+        }
         });
     </script>
 <?php get_footer(); ?>
