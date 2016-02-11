@@ -3,7 +3,7 @@
  * The Template for displaying all single posts.
  */
 get_header(); ?>
-    
+
 <div class="clear"></div>
     
 </header> <!-- / END HOME SECTION  -->
@@ -16,9 +16,13 @@ get_header(); ?>
                 <main id="main" class="site-main" role="main">
 				<?php while ( have_posts() ) : the_post(); 
                                     
-						 get_template_part( 'content', 'single' );
+						 get_template_part( 'content', 'single' );?>
                                                      
-						 zerif_post_nav(); 
+                                            <!--Facebook like & share options-->  
+                                                <div class="fb-like" data-href="http://nilonxanh.com/<?php echo $post->post_name;?>" data-layout="standard" data-action="like" data-show-faces="true" data-share="true"></div>    
+                                            <!--##Facebook like & share options-->  
+
+						 <?php zerif_post_nav(); 
                                                      
 						// If comments are open or we have at least one comment, load up the comment template
 						if ( comments_open() || '0' != get_comments_number() ) :
@@ -52,5 +56,5 @@ get_header(); ?>
         });
     </script>
     <!--##verify reCAPTCHA-->
-    
+
 <?php get_footer(); ?>

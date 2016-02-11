@@ -63,3 +63,10 @@ h1, h2 {
 .g-recaptcha {
     margin-bottom: 10px;
 }
+
+/*Facebook like*/
+
+.fb-like {
+    float: left;
+    margin-bottom: 25px;
+}
