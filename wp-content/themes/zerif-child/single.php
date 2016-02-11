@@ -32,17 +32,25 @@ get_header(); ?>
 			<?php get_sidebar(); ?>
         </div><!-- .sidebar-wrap -->
     </div><!-- .container -->
+    
+    <!--verify reCAPTCHA-->
     <script type="text/javascript">
         jQuery("#submit").click(function(e){
         var v = grecaptcha.getResponse();
         if(v.length == 0)
         {
-            alert('captcha not complete');
+            jQuery('.comment-form').append('<div class="captcha-message">Vui lòng nhập CAPTCHA</div>');
+            e.preventDefault();
+            if (jQuery('.captcha-message').length > 1) {
+                jQuery('.captcha-message').not(':last').remove();
+             };
         }
         else
         {
-            alert('captcha completed');
+            return true;
         }
         });
     </script>
+    <!--##verify reCAPTCHA-->
+    
 <?php get_footer(); ?>

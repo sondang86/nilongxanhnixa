@@ -45,3 +45,21 @@ h1, h2 {
 .responsive-logo a {
     height: 70px;
 }
+
+/*Captcha*/
+
+.captcha-message {
+    color: #fff;
+    font-size: 15px;
+    background: #d01b1d;
+    width: 300px;
+    border: 1px solid #d3d3d3;
+    border-radius: 3px;
+    text-align: center;
+    margin: 10px 0;
+    padding: 5px;
+}
+
+.g-recaptcha {
+    margin-bottom: 10px;
+}

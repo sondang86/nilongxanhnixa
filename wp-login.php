@@ -146,6 +146,7 @@ function login_header( $title = 'Log In', $message = '', $wp_error = '' ) {
 	$classes = apply_filters( 'login_body_class', $classes, $action );
 
 	?>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
 	</head>
 	<body class="login <?php echo esc_attr( implode( ' ', $classes ) ); ?>">
 	<div id="login">
@@ -910,6 +911,49 @@ default:
 </form>
 
 <?php if ( ! $interim_login ) { ?>
+        
+<!--verify reCAPTCHA-->
+    <style>
+        /*Captcha*/
+
+        .captcha-message {
+            color: #fff;
+            font-size: 15px;
+            background: #d01b1d;
+            width: 310px;
+            border: 1px solid #d3d3d3;
+            border-radius: 3px;
+            text-align: center;
+            margin: 10px 0;
+            padding: 5px;
+        }
+
+        .g-recaptcha {
+            margin-top: 15px;
+            margin-bottom: 10px;
+        }
+    </style>
+    <script src='https://www.google.com/recaptcha/api.js'></script>
+    <div class="g-recaptcha" data-sitekey="6Le50RcTAAAAAFqKdnbDt0qDWYcA5lCQKJ4M5_BN"></div>
+    <script type="text/javascript">
+        jQuery("#wp-submit").click(function(e){
+        var v = grecaptcha.getResponse();
+        if(v.length == 0)
+        {
+            jQuery('<div class="captcha-message">Vui lòng nhập CAPTCHA</div>').fadeIn(1500).insertAfter('#loginform' );
+            e.preventDefault();
+            if (jQuery('.captcha-message').length > 1) {
+                jQuery('.captcha-message').not(':last').remove();
+             };
+        }
+        else
+        {
+            return true;
+        }
+        });
+    </script>
+<!--##verify reCAPTCHA-->
+
 <p id="nav">
 <?php if ( ! isset( $_GET['checkemail'] ) || ! in_array( $_GET['checkemail'], array( 'confirm', 'newpass' ) ) ) :
 	if ( get_option( 'users_can_register' ) ) :
